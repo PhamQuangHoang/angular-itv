@@ -96,7 +96,6 @@ a .form-filter {
     cursor: pointer;
   }
 }
-
 // custom checkbox
 .checkbox {
   position: relative;
@@ -105,19 +104,49 @@ a .form-filter {
   border: none;
   background: $bg-color;
   border-bottom: 1px solid #ccc;
-
   label {
     width: 210px;
     height: 42px;
     cursor: pointer;
     font-size: $font-size-md-mb;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     input[type="checkbox"] {
       position: relative;
       width: 22px;
       height: 22px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       outline: none;
+      border: none;
       transition: 0.5s;
       cursor: pointer;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #8a8a8a;
+        border-radius: 2px;
+        box-sizing: border-box;
+        transition: 0.3s;
+      }
+      &:checked {
+        background-color: transparent;
+        color: transparent;
+      }
+      &:checked:before {
+        right: 20px !important;
+        border-left: none;
+        border-top: none;
+        width: 12px;
+        top: -5px;
+        border-width: 2.5px;
+        border-color: #4285f4;
+        transform: rotate(40deg) translate(15px, -10px);
+      }
     }
   }
 }
@@ -142,7 +171,6 @@ a .form-filter {
     z-index: 99;
     opacity: 1;
     align-items: center !important;
-    -webkit-overflow-scrolling: touch;
     transition: transform 0.5s ease-in-out;
   }
   .row {
@@ -156,17 +184,18 @@ a .form-filter {
     width: 100vw;
     height: 88vh !important;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     .scrollme {
       display: block !important;
-      position: absolute;
+      position: relative;
       top: 0;
-      left: 10px;
-      width: 34px;
-      height: 55px;
+      margin : 0px auto 0px 15px;
+      width: 24px;
+      height: 45px;
       .mousey {
         width: 3px;
         padding: 10px 15px;
-        height: 35px;
+        height: 25px;
         border: 2px solid #8a8a8a;
         border-radius: 25px;
         opacity: 0.75;
