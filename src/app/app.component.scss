@@ -1,0 +1,311 @@
+$bg-color: #f8f8f9;
+$primary-color: #4a58ff;
+$color-success: #25de8c;
+$name-color: #2d3c4d;
+$tag-bg: #eff2f7;
+$tag-bg-hover: #bdbfc4;
+$text-smoke-color: #96abb4;
+$text-smoke-hover: #e0e0e0;
+$icon-color: #c8d1db;
+$font-size-sm: 0.8rem;
+$font-size-sm-mb: 0.7rem;
+$font-size-sm-1: 0.6rem;
+$font-size-md: 1rem;
+$font-size-md-mb: 0.9rem;
+$font-size-lg: 1.1rem;
+$lightcolor: #fff;
+$darkcolor: #444;
+// div[class^="col"],
+// div[class*=" col"] {
+//   border: 1px dotted black;
+// }
+.z-index-negative {
+  z-index: -100;
+}
+.z-index-positive {
+  z-index: 5;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.overlay-top {
+  height: 6vh;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 3%;
+}
+.interview-list-container {
+  padding: 0;
+  margin: 5vh 0px 0px 0px;
+}
+a .form-filter {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 200px;
+}
+// custome css for mutiselect
+// :host /deep/ ng-multiselect-dropdown {
+//   display: none;
+//   font-size: $font-size-md-mb;
+// }
+// :host /deep/ ng-multiselect-dropdown div.multiselect-dropdown {
+//   height: 42px;
+//   width: 200px;
+//   border: none !important;
+//   -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+//   -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+//   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+//   color: $text-smoke-color;
+//   span.dropdown-btn {
+//     height: 100%;
+//     padding: 10px 12px !important;
+//     border: none !important;
+//     border-bottom: 1px solid $primary-color !important;
+//     span.dropdown-down {
+//       border-top: 7px solid $primary-color !important;
+//       border-left: 7px solid transparent !important;
+//       border-right: 7px solid transparent !important;
+//     }
+//     span.dropdown-up {
+//       border-bottom: 7px solid $primary-color !important;
+//       border-left: 7px solid transparent !important;
+//       border-right: 7px solid transparent !important;
+//     }
+//   }
+// }
+// ng-multiselect-dropdown div.dropdown-list {
+// }
+
+// custom date picker
+
+.date-picker {
+  position: relative;
+  height: 42px;
+  width: 210px;
+  background: transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  label {
+    height: 42px;
+    width: 190px;
+    cursor: pointer;
+    margin: 0 !important;
+    padding-left: 5px;
+    /deep/ input {
+      cursor: pointer;
+      background: $bg-color;
+      font-size: $font-size-sm;
+      -webkit-appearance: none;
+
+      outline: none;
+      border: none !important;
+      height: 42px;
+      width: 0px;
+      padding: 0 !important;
+      &::placeholder {
+        color: $text-smoke-color;
+        text-align: center;
+      }
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+  .rm-icon {
+    cursor: pointer;
+  }
+}
+
+// custom checkbox
+.checkbox {
+  position: relative;
+  height: 42px;
+  width: 210px;
+  border: none;
+  background: $bg-color;
+  border-bottom: 1px solid #ccc;
+  label {
+    width: 210px;
+    height: 42px;
+    cursor: pointer;
+    font-size: $font-size-md-mb;
+    input[type="checkbox"] {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      transition: 0.5s;
+      cursor: pointer;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #8a8a8a;
+        border-radius: 2px;
+        box-sizing: border-box;
+        transition: 0.3s;
+      }
+      &:checked:before {
+        right: 20px !important;
+        border-left: none;
+        border-top: none;
+        width: 12px;
+        top: -5px;
+        border-width: 2.5px;
+        border-color: #4285f4;
+        transform: rotate(40deg) translate(15px, -10px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .interviewee-list {
+    margin-top: -30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .interviewee-list {
+    margin-top: -100px !important;
+    transition: all 0.3s linear;
+  }
+  .filter-container {
+    position: fixed;
+    width: 100% !important;
+    background: $bg-color;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: none;
+    z-index: 99;
+    opacity: 1;
+    align-items: center !important;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  .row {
+    height: 100% !important;
+  }
+  .form-filter {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    width: 100%;
+    height: 100% !important;
+    .scrollme {
+      display: block !important;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      &::after {
+        animation: pulsea 2s linear infinite;
+        font-size: 25pt;
+        color: transparent; /*Using only shadows makes the animation easier*/
+        font-family: "Font Awesome 5 Free";
+        content: "\f105";
+        font-weight: 900;
+        text-shadow: 0pt 0px 0px $darkcolor, 10pt 0px 0px $darkcolor, 20pt 0px 0px $darkcolor, 30pt 0px 0px $darkcolor;
+      }
+    }
+
+    .text-head {
+      display: block !important;
+    }
+    .filter-wrap {
+      margin: 20px 0px !important;
+    }
+  }
+  .checkbox {
+    width: 270px;
+    label {
+      width: 270px;
+    }
+  }
+  .date-picker {
+    height: 42px;
+    width: 270px;
+    label {
+      width: 230px;
+      input:nth-child(2) {
+        width: 240px !important;
+        font-size: $font-size-md-mb !important;
+      }
+    }
+  }
+  .filter-active {
+    transform: translateX(0%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .interviewee-list {
+    margin-top: -80px !important;
+  }
+}
+
+// for all landscape
+@media screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+  .interviewee-list {
+    margin-top: -50px !important;
+  }
+}
+
+// animation for icon
+@keyframes pulsea {
+  0%,
+  80%,
+  100% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0), 10pt 0px 0px rgba(255, 255, 255, 0),
+      20pt 0px 0px rgba(255, 255, 255, 0), 30pt 0px 0px $darkcolor;
+  }
+  10% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0.5), 10pt 0px 0px rgba(255, 255, 255, 0),
+      20pt 0px 0px rgba(255, 255, 255, 0), 30pt 0px 0px $darkcolor;
+  }
+  20% {
+    text-shadow: 0pt 0px 0px $darkcolor, 10pt 0px 0px rgba(255, 255, 255, 0), 20pt 0px 0px rgba(255, 255, 255, 0),
+      30pt 0px 0px $darkcolor;
+  }
+  30% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0.5), 10pt 0px 0px rgba(255, 255, 255, 0.5),
+      20pt 0px 0px rgba(255, 255, 255, 0), 30pt 0px 0px $darkcolor;
+  }
+  40% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0), 10pt 0px 0px $darkcolor, 20pt 0px 0px rgba(255, 255, 255, 0),
+      30pt 0px 0px $darkcolor;
+  }
+  50% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0), 10pt 0px 0px rgba(255, 255, 255, 0.5),
+      20pt 0px 0px rgba(255, 255, 255, 0.5), 30pt 0px 0px $darkcolor;
+  }
+  60% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0), 10pt 0px 0px rgba(255, 255, 255, 0), 20pt 0px 0px $darkcolor,
+      30pt 0px 0px $darkcolor;
+  }
+  70% {
+    text-shadow: 0pt 0px 0px rgba(255, 255, 255, 0), 10pt 0px 0px rgba(255, 255, 255, 0),
+      20pt 0px 0px rgba(255, 255, 255, 0.5);
+  }
+}
